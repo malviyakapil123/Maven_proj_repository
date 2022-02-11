@@ -8,57 +8,34 @@
 
 </head>
 <body>
-<div class="div1">
-<img style="margin-left: 85%;" src="img\customLogoOuterglow.png" alt="image not found"></div>
-<div class="div2">
-<a href="http://">Login</a><br><br> 
 
-    <a href="http://">Welcome</a>|
-    <a href="http://">Logout</a><br><br>
-    Hi,admin(Admin) <br><br></div>
-    <a href="GetMarksheet.html">Get Marksheet</a>|
-    <a href="MarksheetMeritList.html">Marksheet Merit List</a>|
-    <a href="Myprofile.html">My Profile</a>|
-    <a href="ChangePassword.html">Change Password</a>|
-    <a href="http://">Java Doc</a>|
-    <a href="AddMarksheet.html">Add Marksheet</a>|
-    <a href="MarksheetList.html">Marksheet List</a>|
-    <a href="http://">Add User</a>|
-    <a href="http://">User List</a>|
-    <a href="http://">Add College</a>|
-    <a href="http://">College List</a>|
-    <a href="http://">Add Student</a>|
-    <a href="http://">Student List</a>|
-    <a href="http://">Add Role</a>|
-    <a href="UsreResistratoin.html">User Resistration</a>|
-    <a href="http://">Role List</a>||<br><br>
-    
-    <hr>
+<%@ include file="Header.jsp" %>
+
     <center>
         <h2>User Registration</h2>
         
-        <% %>
         
-        <form action="UserRegistrationCtl" method="post"> 
+        
+        <form action="UserRegistrationCtl" method="post" onsubmit="return checkPassword(this);"> 
         <table>
             <tr>
                 <th>First Name*</th>
-                <td><input type="text" name="fname"></td>
+                <td><input type="text" name="fname" pattern="[A-Z]{1}[a-zA-Z]{2,30}" required title="First Letter should be Capital"></td>
                 <td style="color: red;">First name is required</td>
             </tr>
             <tr>
                 <th>Last Name*</th>
-                <td><input type="text" name="lname"></td>
+                <td><input type="text" name="lname" pattern="[A-Z]{1}[a-zA-Z]{2,30}" required title="First Letter should be Capital"></td>
                 <td style="color: red;">Last name is required</td>
             </tr>
             <tr>
                 <th>LoginId*</th>
-                <td><input type="text" name="login"></td>
+                <td><input type="email" name="login"></td>
                 <td style="color: red;">LoginId is required</td>
             </tr>
             <tr>
                 <th>Password*</th>
-                <td><input type="text" name="pwd"></td>
+                <td><input type="text" name="pwd" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"></td>
                 <td style="color: red;">Password is required</td>
             </tr>
             <tr>
@@ -87,6 +64,11 @@
         </table>
         </form>
     </center>
+
+    <script src="Script.js"></script>
+    
+<%@ include file="Footer.jsp" %>
+
 
 </body>
 </html>

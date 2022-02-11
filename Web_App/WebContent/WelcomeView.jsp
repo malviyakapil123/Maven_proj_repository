@@ -7,15 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="Header.jsp"%>
 
-<%
- String s= (String) request.getAttribute("hi");
-String s1 = (String) request.getAttribute("n");
-%>
-<%="("+ s +")"+"("+ s1 +")" %>
+
 
 	<center>
 		<h1 style="color: blue">Welcome to Rays</h1>
 	</center>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

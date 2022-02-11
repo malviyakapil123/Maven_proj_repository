@@ -9,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import in.co.rays.bean.UserBean;
 import in.co.rays.model.LoginModel;
@@ -53,8 +55,8 @@ public class LoginCtl extends HttpServlet {
 
 			} else {
 			response.sendRedirect("WelcomeCtl");
-				 //RequestDispatcher rd = request.getRequestDispatcher("WelcomeCtl");
-				//rd.forward(request, response);
+				HttpSession session= request.getSession();
+				session.setAttribute("name", String.valueOf(bean1.getFname()));
 
 			}
 

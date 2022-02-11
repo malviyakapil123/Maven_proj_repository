@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body bgcolor="paleyellow">
+<body>
+	<%@ include file="Header.jsp"%>
 
 
 	<form action="LoginCtl" method="post">
@@ -15,21 +16,25 @@
 		<h2 align="center">Login</h2>
 
 		<%
-			 if(request.getAttribute("error")!=null){
+			if (request.getAttribute("error") != null) {
 				String e = (String) request.getAttribute("error");
 		%>
-		<h3 style="color: red" align="center"><%=e %></h3>
-		<%} %>
+		<h3 style="color: red" align="center"><%=e%></h3>
 		<%
-			 if(request.getAttribute("e")!=null){
+			}
+		%> 
+		<%
+			if (request.getAttribute("e") != null) {
 				String s = (String) request.getAttribute("e");
 		%>
-		<h3 style="color: Green" align="center"><%=s %></h3>
-		<%} %>
+		<h3 style="color: Green" align="center"><%=s%></h3>
+		<%
+			}
+		%>
 		<table align="center">
 			<tr>
 				<th>LoginId*</th>
-				<td><input type="text" name="user"></td>
+				<td><input type="email" name="user"></td>
 
 			</tr>
 			<tr>
@@ -50,7 +55,7 @@
 
 		</table>
 	</form>
-
+	<%@ include file="Footer.jsp"%>
 
 </body>
 </html>

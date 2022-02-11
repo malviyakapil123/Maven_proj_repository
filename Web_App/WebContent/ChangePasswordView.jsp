@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
- <hr>
+<%@ include file="Header.jsp" %>
+ 
     <center>
         <h2>Change Password</h2>
         <form action="LoginCtl" method="post">
@@ -15,17 +16,17 @@
             <tr>
                 <th>Old Password</th>
                 <td><input type="text"></td>
-                <td style="color: red;">Old Password is required</td>
+                
             </tr>
             <tr>
-                <th>Old Password</th>
+                <th>New Password</th>
                 <td><input type="text"></td>
-                <td>New Password is required</td>
+                
             </tr>
             <tr>
-                <th>Old Password</th>
+                <th>Confirm New Password</th>
                 <td><input type="text"></td>
-                <td>Confirm Password is required</td>
+                
             </tr> <tr>
                 <th></th>
                 <td><input type="submit" value="Change My Password"></td>
@@ -33,8 +34,9 @@
                </tr>
         </table>
         </form>
-        <hr>
+        
         
     </center>
+    <%@ include file="Footer.jsp" %>
 </body>
 </html>

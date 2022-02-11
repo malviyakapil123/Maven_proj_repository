@@ -35,19 +35,16 @@ public class GetMarksheetCtl extends HttpServlet {
 
 		try {
 			bean = (MarksheetBean) model.getRollNo(bean);
-			PrintWriter pw = response.getWriter();
-			pw.println(bean.getRollno());
-			pw.println(bean.getFname());
+
 			request.setAttribute("id", String.valueOf(bean.getId()));
-			request.setAttribute("Rn",String.valueOf( bean.getRollno()));
-			request.setAttribute("fn",String.valueOf( bean.getFname()));
+			request.setAttribute("Rn", String.valueOf(bean.getRollno()));
+			request.setAttribute("fn", String.valueOf(bean.getFname()));
 			request.setAttribute("ln", String.valueOf(bean.getLname()));
 			request.setAttribute("ph", String.valueOf(bean.getPhysics()));
 			request.setAttribute("ch", String.valueOf(bean.getChemistry()));
 			request.setAttribute("ma", String.valueOf(bean.getMathematics()));
 			RequestDispatcher rd = request.getRequestDispatcher("GetMarksheetView.jsp");
 			rd.forward(request, response);
-		
 
 		} catch (Exception e) {
 
